@@ -50,11 +50,11 @@ before_script:
 script: 
   - ./download_other_githubs
   # jaan
-  - if [[ $TRAVIS_BRANCH == "jaan" ]]; then qmake jaan_EDSS.pro; fi 
-  - if [[ $TRAVIS_BRANCH == "jaan" ]]; then make release; fi 
-  - if [[ $TRAVIS_BRANCH == "jaan" ]]; then time ./jaan_EDSS; fi 
-  - if [[ $TRAVIS_BRANCH == "jaan" ]]; then gprof jaan_EDSS > gprof.log; fi 
-  - if [[ $TRAVIS_BRANCH == "jaan" ]]; then head gprof.log; fi 
+  - qmake jaan_EDSS.pro
+  - make release
+  - time ./jaan_EDSS
+  - gprof jaan_EDSS > gprof.log
+  - head gprof.log
   ###############################################
   # cppcheck
   ###############################################
